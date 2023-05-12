@@ -14,6 +14,16 @@
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.4.3",
     "postcss": "^8.4.23",
+    "sass": "^1.62.1",
     "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.1.2",
+    "@vueuse/router": "^10.1.2",
+    "dayjs": "^1.11.7",
+    "lodash": "^4.17.21",
+    "pluralize": "^8.0.0",
+    "unified-form": "^0.7.2",
+    "unified-network": "^0.6.4"
   }
 }
