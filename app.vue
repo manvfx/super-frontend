@@ -1,5 +1,41 @@
+<script setup>
+/* authentication */
+
+const token = inject("token");
+const user = inject("user");
+
+const loading = ref(false);
+
+onMounted(() => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000);
+});
+</script>
+
 <template>
-  <div class="h-screen w-screen flex content-center justify-center items-center bg-gradient-to-r from-violet-200 to-pink-200">
-    <h1 class="text-lg border-2 border-solid border-black hover:border-pink-500 text-black hover:text-pink-500 cursor-pointer rounded-lg px-4 py-3">Hello Super Frontend!</h1>
-  </div>
+  <v-app>
+    <Head>
+      <Title> Super Frontend </Title>
+    </Head>
+
+    <template v-if="loading">
+      <div
+        class="h-screen w-screen flex flex-col content-center justify-center items-center"
+      >
+        <img src="/logo.png" width="128" height="128" />
+
+        Loading...
+      </div>
+    </template>
+    <template v-else>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </template>
+  </v-app>
 </template>
+
+<style lang="scss">
+</style>
