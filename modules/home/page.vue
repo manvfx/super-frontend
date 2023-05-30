@@ -1,6 +1,8 @@
 <script setup>
+
 const router = useRouter();
 const route = useRoute();
+
 
 const authForm = reactive({
   fullName: "",
@@ -76,6 +78,7 @@ async function testFormDialogs() {
     },
   });
 }
+
 </script>
 
 <template>
