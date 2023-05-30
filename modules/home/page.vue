@@ -15,6 +15,7 @@ const authForm = reactive({
 });
 
 import { launchButtonPickerDialog } from "../../utilities/unified-dialogs-tailwindcss/button-picker/mod";
+import { launchFormPickerDialog } from "../../utilities/unified-dialogs-tailwindcss/form-picker/mod";
 
 async function testDialogs() {
   const choice = await launchButtonPickerDialog({
@@ -32,7 +33,7 @@ async function testDialogs() {
         title: "Deactivate",
         color: "error",
         async handler() {
-          console.log("hi yes")
+          console.log("hi yes");
         },
       },
     ],
@@ -43,6 +44,37 @@ async function testDialogs() {
   }
 
   alert(`You ${choice} it!`);
+}
+
+async function testFormDialogs() {
+  launchFormPickerDialog({
+    title: "Add Person Data",
+    subtitle: "Please enter person data",
+    fields: [
+      {
+        key: "fullName",
+        identifier: "text",
+        label: "Full Name",
+        width: 6,
+      },
+      {
+        key: "phoneNumber",
+        identifier: "text",
+        label: "Phone Number",
+        width: 6,
+      },
+    ],
+    submitLabel: "Save new data",
+    cancelLabel: "Cancel",
+    options: {
+      width: 600,
+    },
+    async submitHandler(form) {
+      const { fullName, phoneNumber } = form;
+      console.log(fullName);
+      console.log(phoneNumber);
+    },
+  });
 }
 </script>
 
@@ -179,7 +211,14 @@ async function testDialogs() {
         type="submit"
         @click="testDialogs()"
       >
-        Show Dialog
+        Show Alert Dialog
+      </button>
+      <button
+        class="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white ml-3"
+        type="submit"
+        @click="testFormDialogs()"
+      >
+        Show Form Dialog
       </button>
     </div>
   </div>
