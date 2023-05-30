@@ -13,6 +13,37 @@ const authForm = reactive({
   sizes: "",
   cover: "",
 });
+
+import { launchButtonPickerDialog } from "../../utilities/unified-dialogs-tailwindcss/button-picker/mod";
+
+async function testDialogs() {
+  const choice = await launchButtonPickerDialog({
+    icon: "mdi-home",
+    title: "Unified Dialogs",
+    subtitle: "Streamlines your applications dialogs",
+    text: "Save time and headache by using Unified Dialogs to show dialog in your application.",
+    startButtons: [
+      {
+        title: "Cancel",
+      },
+    ],
+    endButtons: [
+      {
+        title: "Deactivate",
+        color: "error",
+        async handler() {
+          console.log("hi yes")
+        },
+      },
+    ],
+  });
+
+  if (!choice) {
+    return;
+  }
+
+  alert(`You ${choice} it!`);
+}
 </script>
 
 <template>
@@ -141,6 +172,15 @@ const authForm = reactive({
     />
     <div class="px-4 py-4 bg-slate-200 rounded-lg mb-4">
       <div class="font-bold text-lg">Dialogs</div>
+    </div>
+    <div>
+      <button
+        class="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white"
+        type="submit"
+        @click="testDialogs()"
+      >
+        Show Dialog
+      </button>
     </div>
   </div>
 </template>

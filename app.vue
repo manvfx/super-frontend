@@ -12,6 +12,9 @@ onMounted(() => {
     loading.value = false;
   }, 1000);
 });
+
+import { UnifiedDialogProvider } from "./utilities/unified-dialogs/mod";
+
 </script>
 
 <template>
@@ -34,6 +37,7 @@ onMounted(() => {
         <NuxtPage />
       </NuxtLayout>
     </template>
+    <unified-dialog-provider />
   </v-app>
 </template>
 
