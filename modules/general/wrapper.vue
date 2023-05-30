@@ -10,7 +10,9 @@ const route = useRoute();
 
 <template>
   <v-layout>
-    <div>Home Header</div>
+    <div class="px-8 py-8">
+      <div class="text-3xl font-bold">Tailwindcss UI Kit base on Unified Form <span class="text-lg font-light text-gray-500">(@yooneskh)</span></div>
+    </div>
     <v-main>
       <NuxtPage />
     </v-main>

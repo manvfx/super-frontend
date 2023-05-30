@@ -10,7 +10,6 @@ const route = useRoute();
 
 <template>
   <v-layout>
-    <div>Panel Header</div>
     <v-main>
       <NuxtPage />
     </v-main>

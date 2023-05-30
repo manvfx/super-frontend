@@ -19,6 +19,9 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.13",
+    "@heroicons/vue": "^2.0.18",
+    "@nuxthq/ui-edge": "^2.1.0-28080809.28167e4",
     "@vueuse/core": "^10.1.2",
     "@vueuse/router": "^10.1.2",
     "dayjs": "^1.11.7",
